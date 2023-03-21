@@ -30,6 +30,7 @@ DoublyLinkedList::DoublyLinkedList(const DoublyLinkedList& dll){
  * 
  */
 DoublyLinkedList::~DoublyLinkedList(){
+    cout << "Destructor called." << endl;
     Node* temp = head;
     while(temp != NULL){
         Node* next = temp->next;
@@ -94,11 +95,11 @@ void DoublyLinkedList::push(int data){
  * 
  */
 void DoublyLinkedList::pop(){
-    if(head == NULL){
+    if(head == NULL){ // empty list
         return;
     }
     
-    if(head == tail){
+    if(head == tail){ // only one node
         delete head;
         head = NULL;
         tail = NULL;
@@ -120,7 +121,7 @@ int DoublyLinkedList::size(){
     Node* temp = head;
     int count = 0;
     
-    if(temp == nullptr){
+    if(temp == nullptr){ // empty list
         return count;
     }
     
